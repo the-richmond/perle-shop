@@ -418,7 +418,7 @@ function ProductCard({ product, onOpen, onAdd, lang }) {
             <div style={{ fontFamily:"'Fraunces',serif", fontSize:19, fontWeight:400, color:'#1a1410', lineHeight:1.2 }}>{product.name}</div>
             <div style={{ fontSize:11.5, color:'rgba(90,65,38,0.50)', marginTop:3, letterSpacing:'0.06em' }}>{product.material}</div>
           </div>
-          <div style={{ fontFamily:"'Fraunces',serif", fontSize:19, color:'rgba(110,75,42,0.80)', flexShrink:0, paddingLeft:12 }}>${product.price}</div>
+          <div style={{ fontFamily:"'Fraunces',serif", fontSize:19, color:'rgba(110,75,42,0.80)', flexShrink:0, paddingLeft:12 }}>€{product.price}</div>
         </div>
         <div style={{ fontSize:10.5, color:'rgba(100,72,44,0.38)', letterSpacing:'0.08em', marginTop:6, fontStyle:'italic' }}>{T('hold_hint',lang)}</div>
         <div style={{ display:'flex', gap:9, marginTop:14 }}>
@@ -456,7 +456,7 @@ function ProductModal({ product, onClose, onAdd, lang }) {
           <div>
             <div style={{ fontSize:10.5,letterSpacing:'0.22em',textTransform:'uppercase',color:'rgba(100,72,44,0.45)',marginBottom:7 }}>{product.material}</div>
             <h2 style={{ fontFamily:"'Fraunces',serif",fontSize:30,fontWeight:400,color:'#1a1410',lineHeight:1.1 }}>{product.full}</h2>
-            <div style={{ fontFamily:"'Fraunces',serif",fontSize:22,color:'rgba(110,75,42,0.72)',marginTop:8 }}>${product.price}</div>
+            <div style={{ fontFamily:"'Fraunces',serif",fontSize:22,color:'rgba(110,75,42,0.72)',marginTop:8 }}>€{product.price}</div>
           </div>
           <p style={{ color:'rgba(60,42,22,0.62)',lineHeight:1.80,fontSize:13.5 }}>{desc}</p>
           <ul style={{ listStyle:'none',display:'flex',flexDirection:'column',gap:7 }}>
@@ -507,7 +507,7 @@ function CartSidebar({ cart, open, onClose, onCheckout, onRemove, lang }) {
                 <div style={{ flex:1 }}>
                   <div style={{ fontFamily:"'Fraunces',serif",fontSize:15,color:'#1a1410' }}>{item.name}</div>
                   <div style={{ fontSize:11,color:'rgba(100,72,44,0.45)',marginTop:2 }}>{item.material}</div>
-                  <div style={{ fontFamily:"'Fraunces',serif",fontSize:15,color:'rgba(110,75,42,0.72)',marginTop:5 }}>${item.price}</div>
+                  <div style={{ fontFamily:"'Fraunces',serif",fontSize:15,color:'rgba(110,75,42,0.72)',marginTop:5 }}>€{item.price}</div>
                 </div>
                 <button onClick={()=>onRemove(i)} onMouseEnter={()=>window.__cursor?.hover()} onMouseLeave={()=>window.__cursor?.idle()}
                   style={{ color:'rgba(100,72,44,0.32)',fontSize:18,flexShrink:0,background:'none',border:'none',padding:0,fontFamily:'inherit' }}>✕</button>
@@ -731,7 +731,7 @@ function Checkout({ cart, onClose, onComplete, lang }) {
               <p style={{ fontSize:12.5,color:'rgba(80,55,22,0.66)',lineHeight:1.75 }}>{T('payment_explainer',lang)}</p>
             </div>
             <div style={{ borderTop:'1px solid rgba(140,100,60,0.10)',paddingTop:14 }}>
-              {cart.map((item,i)=><div key={i} style={{ display:'flex',justifyContent:'space-between',fontSize:12.5,color:'rgba(100,72,44,0.55)',marginBottom:5 }}><span>{item.full}</span><span>${item.price}</span></div>)}
+              {cart.map((item,i)=><div key={i} style={{ display:'flex',justifyContent:'space-between',fontSize:12.5,color:'rgba(100,72,44,0.55)',marginBottom:5 }}><span>{item.full}</span><span>€{item.price}</span></div>)}
               <div style={{ display:'flex',justifyContent:'space-between',marginTop:9,fontFamily:"'Fraunces',serif",fontSize:18,color:'#1a1410' }}><span>{T('total',lang)}</span><span>${total}</span></div>
             </div>
           </>}
@@ -937,7 +937,7 @@ function App() {
       </main>
       <footer style={{ borderTop:'1px solid rgba(140,100,60,0.10)',padding:'26px 44px',display:'flex',justifyContent:'space-between',alignItems:'center',color:'rgba(100,72,44,0.30)',fontSize:11.5,letterSpacing:'0.07em' }}>
         <div style={{ display:'flex',alignItems:'center',gap:10 }}><PearlLogo size={22}/><span>{T('footer',lang)}</span></div>
-        <span>peerle.com</span>
+        <span>perle-riga.com</span>
       </footer>
       <ProductModal product={modal} onClose={()=>setModal(null)} onAdd={addToCart} lang={lang}/>
       <CartSidebar cart={cart} open={cartOpen} onClose={()=>setCartOpen(false)} onRemove={removeFromCart} onCheckout={()=>{setCartOpen(false);setCheckout(true);}} lang={lang}/>

@@ -53,8 +53,8 @@ const PRODUCTS = [
     material: 'Cognac · Italian Leather',
     price: 150,
     type: 'bifold',
-    // photo: 'images/bifold-closed.jpg',
-    // photoOpen: 'images/bifold-open.jpg',
+     photo: 'images/bifold-closed.png',
+     photoOpen: 'images/bifold-closed.png',
     colors: { base: '#7a3a18', hi: '#b06030', dk: '#4a200c' },
     desc: {
       en: 'Hand-stitched bi-fold in cognac Italian leather with cold-pressed reptile embossing. Three card slots per side, full-length bill compartment. Pearl foil Pērle mark on interior. Each wallet is individually numbered.',
@@ -75,8 +75,8 @@ const PRODUCTS = [
     material: 'Noir · Italian Leather',
     price: 180,
     type: 'cardholder',
-    // photo: 'images/cardholder-closed.jpg',
-    // photoOpen: 'images/cardholder-open.jpg',
+     photo: 'images/cardholder-closed.png',
+     photoOpen: 'images/cardholder-open.png',
     colors: { base: '#181210', hi: '#2e2018', dk: '#060404' },
     desc: {
       en: 'Square card holder in noir Italian leather with reptile embossing. Three card slots on each outer face, three per inner face — twelve cards total. Single-piece construction, pearl foil Pērle mark on exterior.',

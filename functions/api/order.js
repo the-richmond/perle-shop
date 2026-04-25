@@ -37,25 +37,38 @@ export async function onRequestPost(context) {
     ? `   Курьер: ${escapeMd(delivery.city || '—')}, ${escapeMd(delivery.address || '—')}`
     : `   ПВЗ СДЭК: ${escapeMd(delivery.city || '—')} · ${escapeMd(delivery.sdek || '—')}`;
 
+    // Стильные разделители и символ
+  const divider = '──────────────';
+  const pearl = '○';
+
   const message = [
-    '🎁 *НОВАЯ ЗАЯВКА Pērle*',
+    `${pearl}  *PĒRLE*  ${pearl}`,
+    divider,
     '',
-    `👤 *${escapeMd(customer.name)}*`,
-    `📞 ${escapeMd(customer.phone)}`,
-    `✉️ ${escapeMd(customer.email)}`,
+    '*НОВЫЙ ЗАКАЗ*',
     '',
-    `💬 *Канал связи:* ${escapeMd(contact.method || '—')}`,
-    `   ${escapeMd(contact.value || '—')}`,
+    '*КЛИЕНТ*',
+    `  ${escapeMd(customer.name)}`,
+    `  ${escapeMd(customer.phone)}`,
+    `  ${escapeMd(customer.email)}`,
     '',
-    '📦 *Состав:*',
-    itemsText,
-    `💰 *Итого: $${total_usd}*`,
+    '*ПРЕДПОЧТИТЕЛЬНЫЙ МЕТОД СВЯЗИ*',
+    `  ${escapeMd(contact.method || '—')}  ·  ${escapeMd(contact.value || '—')}`,
     '',
-    '📍 *Доставка:*',
-    deliveryBlock,
-    delivery.notes ? `   Комментарий: ${escapeMd(delivery.notes)}` : '',
+    '*ДЕТАЛИ ЗАКАЗА*',
+    items.map(i => `  ${pearl}  ${escapeMd(i.name)}  —  $${i.price}`).join('\n'),
     '',
-    `🌐 Язык: ${language || 'en'}`,
+    `*ИТОГО*  ·  $${total_usd}`,
+    '',
+    '*ДОСТАВКА*',
+    `  ${delivery.kind === 'courier' ? 'COURIER' : 'PICKUP (CDEK)'}`,
+    `  ${delivery.kind === 'courier' 
+        ? `${escapeMd(delivery.city || '—')}, ${escapeMd(delivery.address || '—')}` 
+        : `${escapeMd(delivery.city || '—')}  ·  ${escapeMd(delivery.sdek || '—')}`}`,
+    delivery.notes ? `  ${escapeMd(delivery.notes)}` : '',
+    '',
+    divider,
+    `System: ${language || 'en'}`,
   ].filter(Boolean).join('\n');
 
   if (!env.TG_BOT_TOKEN || !env.TG_CHAT_ID) {
