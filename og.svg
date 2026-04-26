@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#f6efe2"/>
+      <stop offset="100%" stop-color="#ede4d4"/>
+    </radialGradient>
+    <radialGradient id="pearl-fill" cx="34%" cy="24%" r="72%">
+      <stop offset="0%"   stop-color="#fce8ec"/>
+      <stop offset="18%"  stop-color="#eed4dc"/>
+      <stop offset="44%"  stop-color="#d4c0d2"/>
+      <stop offset="70%"  stop-color="#c0bcd6"/>
+      <stop offset="100%" stop-color="#d4b8bc"/>
+    </radialGradient>
+    <radialGradient id="pearl-hi" cx="28%" cy="20%" r="42%">
+      <stop offset="0%"   stop-color="#fffcfc" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#fffcfc" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pearl-rose" cx="75%" cy="22%" r="36%">
+      <stop offset="0%"   stop-color="#f0bed0" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#f0bed0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#f0c8d4" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#f0c8d4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#c3d4ec" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#c3d4ec" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- soft glow halo -->
+  <circle cx="600" cy="280" r="320" fill="url(#glow1)"/>
+  <circle cx="640" cy="320" r="280" fill="url(#glow2)"/>
+  <!-- pearl logo -->
+  <g transform="translate(525,170) scale(1.5)">
+    <circle cx="50" cy="50" r="46" fill="url(#pearl-fill)"/>
+    <circle cx="50" cy="50" r="46" fill="url(#pearl-hi)"/>
+    <circle cx="50" cy="50" r="46" fill="url(#pearl-rose)"/>
+    <circle cx="50" cy="50" r="46" fill="none" stroke="#d2afb6" stroke-width="1.5"/>
+  </g>
+  <!-- wordmark -->
+  <text x="600" y="470" text-anchor="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-style="italic" font-size="84" fill="#1a1410">Pērle</text>
+  <!-- tagline -->
+  <text x="600" y="525" text-anchor="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="22" letter-spacing="6" fill="#7a5530"
+    >РУКОТВОРНЫЕ АКСЕССУАРЫ ИЗ РИГИ</text>
+  <!-- coordinates -->
+  <text x="600" y="575" text-anchor="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="14" letter-spacing="4" fill="#9a7a55"
+    >59°N · 24°E</text>
+</svg>

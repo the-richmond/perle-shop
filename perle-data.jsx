@@ -97,9 +97,9 @@ const PRODUCTS = [
         hex:  '#7a3a18',
         svg:  { base: '#7a3a18', hi: '#b06030', dk: '#4a200c' },
         // Раскомментируй когда снимешь:
-        // photo_closed: 'images/bifold-cognac-closed.jpg',
+         photo_closed: 'images/bifold-cognac-closed.png',
         // photo_ajar:   'images/bifold-cognac-ajar.jpg',
-        // frames_open:  ['images/bifold-cognac-01.jpg','images/bifold-cognac-02.jpg','images/bifold-cognac-03.jpg','images/bifold-cognac-04.jpg','images/bifold-cognac-05.jpg'],
+         frames_open:  ['images/bifold-cognac-01.png','images/bifold-cognac-02.png','images/bifold-cognac-03.png','images/bifold-cognac-04.png','images/bifold-cognac-05.png'],
       },
       {
         id: 'noir',
